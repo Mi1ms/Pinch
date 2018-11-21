@@ -12,6 +12,9 @@
   <script>
     var webs = new WebSocket('ws://localhost:5432')
     console.log(webs);
+    webs.onmessage = function(event){
+      console.log(event.data);
+    }
 
 
   </script>
