@@ -1,21 +1,25 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  </head>
-  <body>
-    <h1> Client :</h1>
-  </body>
-  <script>
-    var webs = new WebSocket('ws://localhost:5432')
-    console.log(webs);
-    webs.onmessage = function(event){
-      console.log(event.data);
-    }
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+    <head>
+      <!-- <meta charset="utf-8"> -->
+      <title></title>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    </head>
+    <body>
+      <h1> Client :</h1>
+    </body>
+    <script>
+      console.log('in index.html');
+      var webs = new WebSocket('ws://localhost:5432')
+      console.log(webs);
+      // webs.onopen = function() {
+      //   webs.send('Connected')
+      // }
+      webs.onmessage = function(event){
+        console.log(event.data);
+        console.log(event);
+      }
 
 
-  </script>
-</html>
+    </script>
+  </html>
