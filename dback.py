@@ -4,7 +4,7 @@ original_build_request = handshake.build_request
 
 def custom_build_request(headers):
     res = original_build_request(headers)
-    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Origin'] = '*:*'
     return headers
 
 handshake.build_request = custom_build_request
